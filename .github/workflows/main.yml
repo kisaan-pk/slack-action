@@ -18,7 +18,6 @@ jobs:
     - name: Slack notification SUCCESS
       uses: kisaan-pk/slack-action@v1.3
       env:
-          SLACK_WEBHOOK: ${{SLACK_WEBHOOK}}
           SERVICE_NAME: User
           SERVICE_URL: https://user_prod.kisaangroup.pk
           ENVIROMMENT: Production
