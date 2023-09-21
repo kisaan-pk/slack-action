@@ -2,23 +2,19 @@
   @description
   Message payload to be sent with Slack webhook
 */
-const { selectAvatar, getMessage, parsePayload } = require("./handlers");
+const { selectAvatar, parsePayload } = require("./handlers");
 
-const {
-  SLACK_USERNAME,
-  SLACK_CHANNEL,
-  SLACK_CUSTOM_PAYLOAD,
-} = process.env;
+const { SLACK_USERNAME, SLACK_CHANNEL } = process.env;
 
 const messageSingleton = (() => {
   let instance;
 
   function createInstance() {
-    if (SLACK_CUSTOM_PAYLOAD) return parsePayload();
+    return parsePayload();
 
     const message = {};
 
-    message.text = getMessage(); // Args || DEFAULT_MESSAGE
+    message.text = {};
 
     // override username
     if (SLACK_USERNAME) message.username = SLACK_USERNAME;
@@ -40,7 +36,7 @@ const messageSingleton = (() => {
     get() {
       if (!instance) instance = createInstance();
       return instance;
-    }
+    },
   };
 })();
 
