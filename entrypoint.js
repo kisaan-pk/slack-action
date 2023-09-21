@@ -5,6 +5,9 @@ const message = require("./message");
 
 const REQUIRED_ENV_VARS = [];
 
+const { WEBHOOK_KEY } =
+  process.env;
+
 try {
   _.forEach(REQUIRED_ENV_VARS, (env) => {
     if (_.isEmpty(process.env[env])) {
@@ -21,7 +24,7 @@ if (!process.exitCode) {
 
   axios
     .post(
-      "https://hooks.slack.com/services/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",
+      WEBHOOK_KEY,
       message.get()
     )
     .then(() => {
