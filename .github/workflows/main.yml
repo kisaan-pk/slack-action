@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Slack notification SUCCESS
-      uses: kisaan-pk/slack-action@v1.3
+      uses: kisaan-pk/slack-action@v1.4
       env:
           SERVICE_NAME: User
           SERVICE_URL: https://user_prod.kisaangroup.pk
