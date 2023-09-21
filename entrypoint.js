@@ -5,7 +5,7 @@ const message = require("./message");
 
 const REQUIRED_ENV_VARS = [];
 
-const { WEBHOOK_KEY } =
+const { SLACK_WEBHOOK } =
   process.env;
 
 try {
@@ -24,7 +24,7 @@ if (!process.exitCode) {
 
   axios
     .post(
-      WEBHOOK_KEY,
+      SLACK_WEBHOOK,
       message.get()
     )
     .then(() => {
