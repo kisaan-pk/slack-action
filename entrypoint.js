@@ -20,7 +20,7 @@ try {
 }
 
 if (!process.exitCode) {
-  core.info("Sending message ...");
+  core.info("Sending message Updated ...");
 
   core.info( message.get())
   axios
