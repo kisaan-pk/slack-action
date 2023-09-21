@@ -12,22 +12,9 @@
     "build": "ncc build ./entrypoint -m",
     "start": "node -r dotenv/config ./entrypoint 'My message from {{GITHUB_REPOSITORY}}'",
     "lint": "eslint --ext .js ./"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ilshidur/actions.git"
-  },
-  "keywords": [
-    "slack",
-    "github",
-    "action"
-  ],
-  "author": "Ilshidur",
+  }, 
+  "author": "Husnain",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Ilshidur/actions/issues"
-  },
-  "homepage": "https://github.com/Ilshidur/actions#readme",
   "dependencies": {
     "@actions/core": "1.2.7",
     "axios": "0.21.0",
