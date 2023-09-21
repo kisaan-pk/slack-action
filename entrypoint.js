@@ -22,14 +22,14 @@ try {
 if (!process.exitCode) {
   core.info("Sending message ...");
 
-  core.log( message.get())
+  core.info( message.get())
   axios
     .post(
       SLACK_WEBHOOK,
       message.get()
     )
     .then((v) => {
-      core.log(v?.data)
+      core.info(v?.data)
       process.exitCode = 0;
       return core.info("Message sent! Shutting down ...");
     })
