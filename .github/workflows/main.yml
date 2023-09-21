@@ -15,11 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-  
-
     - name: Slack notification SUCCESS
-      uses: Ilshidur/action-slack@2.1.0
+      uses: kisaan-pk/slack-action@v1.3
       env:
           SLACK_WEBHOOK: ${{SLACK_WEBHOOK}}
           SERVICE_NAME: User
